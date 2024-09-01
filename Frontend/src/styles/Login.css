@@ -1,0 +1,104 @@
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(252, 252, 252);
+}
+
+.container-login-contenido {
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+    display: block;
+    position: absolute;
+}
+
+input {
+    width: 70%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+}
+
+.logo-login {
+    width: 500px;
+    height: 190px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+}
+
+.logo-mkdpt {
+    left: 36%;
+    top: 4.5%;
+    position: absolute;
+    width: 180px;
+    height: 70px;
+    z-index: 2;
+}
+
+.title-login-user {
+    position: absolute;
+    color: #ffff;
+    z-index: 3;
+    left: 30%;
+    top: 32%;
+    text-shadow:
+        1px 1px 0 #000;
+}
+
+#mensaje {
+    color: red;
+    padding: 0;
+    margin: 0;
+}
+
+.cont-registrarse {
+    display: flex;
+    justify-content: left;
+    margin-left: 85px;
+    width: 40%;
+}
+
+.cont-registrarse p {
+    align-content: flex-start;
+}
+
+.cont-registrarse a {
+    color: inherit;
+}
+
+.cont-registrarse p:visited {
+    color: inherit;
+}
+
+.olvide-pass {
+    width: 70%;
+    font-size: 11px;
+    color: #afaeae;
+    font-size: 10px;
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 87px;
+}
+
+.olvide-pass a {
+    color: inherit;
+    color: #000;
+}
+
+.btn-submit-login {
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    right: 17.3%;
+    background-color: brown;
+    color: #ffff;
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+    cursor: pointer;
+}

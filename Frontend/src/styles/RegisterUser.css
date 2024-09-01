@@ -1,0 +1,95 @@
+.container-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125vh;
+    background-color: rgb(252, 252, 252);
+}
+
+.container-register-contenido {
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+    display: block;
+    position: absolute;
+}
+
+.cont-password {
+    display: flex;
+    margin-left: 65px;
+
+}
+
+input {
+    width: 70%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+}
+.input-pass{
+    width: 92.5%;
+    margin-left: 20px;
+}
+.logo-login-register {
+    width: 500px;
+    height: 190px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+}
+
+.logo-mkdpt-register {
+    left: 36%;
+    top: 4.5%;
+    position: absolute;
+    width: 180px;
+    height: 70px;
+    z-index: 2;
+}
+
+.title-register-user {
+    position: absolute;
+    color: #ffff;
+    z-index: 3;
+    left: 30%;
+    top: 24%;
+    text-shadow:
+        1px 1px 0 #000;
+}
+
+#mensaje {
+    color: red;
+    padding: 0;
+    margin: 0;
+}
+
+.cont-registrarse {
+    display: flex;
+    justify-content: left;
+    margin-left: 85px;
+    width: 40%;
+}
+
+.cont-registrarse p {
+    align-content: flex-start;
+}
+
+.cont-registrarse a {
+    color: inherit;
+}
+
+.cont-registrarse p:visited {
+    color: inherit;
+}
+
+.recaptcha {
+    margin-top: 15px;
+    margin-left: 130px;
+}
+
+.error-captcha {
+    margin-top: 10px;
+    color: red;
+}

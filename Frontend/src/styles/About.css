@@ -1,0 +1,36 @@
+.divAbout{
+    margin-top: 6%;
+}
+.TitleAbout {
+    padding: 0px 5px;
+}
+
+.containerA1 {
+    max-width: auto;           
+    margin-left: 50px; 
+    margin-right: 50px;          
+    padding: 0px 5px;             
+}
+.containerA1 p{
+    margin-left: 10px;
+    margin-bottom: 16px;        
+    line-height: 1.6;           
+    text-align: justify; 
+}
+.TitleAboutType{
+    
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid black; /* Simula el cursor */
+    animation: typing 4s steps(100, end), blink-caret 0.75s step-end infinite;
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Parpadeo del cursor */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}

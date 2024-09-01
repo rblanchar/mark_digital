@@ -1,0 +1,35 @@
+/*SOCIAL*/
+.social {
+    background-color: #333;
+
+}
+
+.social-inst {
+    border-radius: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    /*margin-top: 10px;*/
+}
+
+.social-face,
+.social-inst,
+.social-twt {
+    width: 35px;
+    height: 35px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footerCopy {
+    background-color: #333;
+    color: #616161;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 20px;
+}
