@@ -11,7 +11,7 @@ const Navbar = () => {
     <div className='container-nav'>
       <header className="header">
         <NavLink to="/" className='logo'>
-        <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Flogo-mdpt.png?alt=media" alt="logo-mdpt" className='logo-mdpt' loading='lazy'/>
+        <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725173242/imagenes/nqtrdnabynrogmjzeoo5.png" alt="logo-mdpt" className='logo-mdpt' loading='lazy'/>
           <div>
             <div className='logo-l'></div>  
           </div>

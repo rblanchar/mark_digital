@@ -72,7 +72,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="container3">
-                <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fhome%2Fhome_img1.jpg?alt=media" className="imagenC3" loading="lazy" alt="imgC3"></img>
+                <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171132/imagenes/home/dxcpbgxhoisjg644srre.jpg" className="imagenC3" loading="lazy" alt="imgC3"></img>
                 <div className="C3-columna-2">
                     <h3>Revisión y Mejora de tu Estrategia de Marketing Digital</h3>
                     <p>Revisar y mejorar tu estrategia de marketing digital es una tarea fundamental para alcanzar el éxito en el competitivo entorno actual. Este proceso implica una serie de pasos detallados que te ayudarán a identificar las áreas que necesitan ajustes y a implementar cambios efectivos para maximizar tus resultados.</p>
@@ -96,23 +96,23 @@ const Home = () => {
 
                     <Carousel responsive={responsive}>
                         <NavLink to="/Courses">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fcursos%2Fcurso-marketing-digital.jpg?alt=media" className="C5-curso1" loading="lazy" alt="C5-curso1"></img>
+                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171474/imagenes/cursos/admat4kx7vlk3bzoddly.jpg" className="C5-curso1" loading="lazy" alt="C5-curso1"></img>
                         </NavLink>
                         <NavLink to="/Courses">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fcursos%2Fcurso-publicidad-instagram.jpg?alt=media" className="C5-curso2" loading="lazy" alt="C5-curso2"></img>
+                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/qahd4gdhcwexsiirmue2.jpg" className="C5-curso2" loading="lazy" alt="C5-curso2"></img>
                         </NavLink>
                         <NavLink to="/Courses">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fcursos%2Fcurso-ventas.jpg?alt=media" className="C5-curso3" loading="lazy" alt="C5-curso3"></img>
+                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/eul5wix6pwhx7ojhfluz.jpg" className="C5-curso3" loading="lazy" alt="C5-curso3"></img>
                         </NavLink>
                         <NavLink to="/Courses">
 
-                            <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fcursos%2Fcurso-marketing-digital.jpg?alt=media" className="C5-curso1" loading="lazy" alt="C5-curso1"></img>
+                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171474/imagenes/cursos/admat4kx7vlk3bzoddly.jpg" className="C5-curso1" loading="lazy" alt="C5-curso1"></img>
                         </NavLink>
                         <NavLink to="/Courses">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fcursos%2Fcurso-publicidad-instagram.jpg?alt=media" className="C5-curso2" loading="lazy" alt="C5-curso2"></img>
+                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/qahd4gdhcwexsiirmue2.jpg" className="C5-curso2" loading="lazy" alt="C5-curso2"></img>
                         </NavLink>
                         <NavLink to="/Courses">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fcursos%2Fcurso-ventas.jpg?alt=media" className="C5-curso3" loading="lazy" alt="C5-curso3"></img>
+                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/eul5wix6pwhx7ojhfluz.jpg" className="C5-curso3" loading="lazy" alt="C5-curso3"></img>
                         </NavLink>
                     </Carousel>
 
@@ -122,32 +122,32 @@ const Home = () => {
                 <div className="C4-column1">
                     <p className="T-parrafo">Innovación</p>
                     <p>Aplicamos innovación constante, incorporando las últimas tendencias digitales para mantener a tu negocio siempre competitivo.</p>
-                    <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fhome%2Fimg1.jpg?alt=media" className="imagenC4-1" alt="card-1" loading="lazy"></img>
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171133/imagenes/home/j6jqcc66jc69mrm5wyn2.jpg" className="imagenC4-1" alt="card-1" loading="lazy"></img>
                 </div>
                 <div className="C4-column2">
                     <p className="T-parrafo">Beneficios</p>
                     <p>Aprovecha al máximo tu inversión con soluciones enfocadas en generar beneficios concretos y medibles para tu negocio.</p>
-                    <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fhome%2Fimg2.jpg?alt=media" className="imagenC4-2" alt="card-2" loading="lazy"></img>
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171132/imagenes/home/mtwhstmloe7juzrgcpxy.jpg" className="imagenC4-2" alt="card-2" loading="lazy"></img>
                 </div>
                 <div className="C4-column3">
                     <p className="T-parrafo"> Estrategias</p>
                     <p>Diseñamos estrategias personalizadas que alinean tus objetivos con acciones efectivas, garantizando un impacto positivo en tu negocio.</p>
-                    <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fhome%2Fimg3.jpg?alt=media" className="imagenC4-3" alt="card-3" loading="lazy"></img>
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171132/imagenes/home/gtcfvpxgbmrdi71x35jo.jpg" className="imagenC4-3" alt="card-3" loading="lazy"></img>
                 </div>
                 <div className="C4-column4">
                     <p className="T-parrafo">Acompañamiento</p>
                     <p>Te acompañamos en cada paso del camino, brindando soporte continuo para superar desafíos y alcanzar el éxito.</p>
-                    <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fhome%2Fimg4.jpg?alt=media" className="imagenC4-4" alt="card-4" loading="lazy"></img>
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171133/imagenes/home/z2hfkmgm4xp8jp6psljr.jpg" className="imagenC4-4" alt="card-4" loading="lazy"></img>
                 </div>
                 <div className="C4-column5">
                     <p className="T-parrafo">Experiencia</p>
                     <p>Con más de 5 años impulsando emprendimientos, aplicamos nuestra experiencia para lograr resultados excepcionales.</p>
-                    <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fhome%2Fimg5.jpg?alt=media" className="imagenC4-5" loading="lazy" alt="card-5"></img>
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171133/imagenes/home/zeuzyqppn27o6ia7phfa.jpg" className="imagenC4-5" loading="lazy" alt="card-5"></img>
                 </div>
                 <div className="C4-column6">
                     <p className="T-parrafo">Liderazgo</p>
                     <p>Guiamos a emprendedores con liderazgo estratégico, asegurando un crecimiento constante y sostenido en el mercado digital.</p>
-                    <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fhome%2Fimg6.jpg?alt=media" className="imagenC4-6" loading="lazy" alt="card-6"></img>
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171133/imagenes/home/fvvtcodlufc509x4yqll.jpg" className="imagenC4-6" loading="lazy" alt="card-6"></img>
                 </div>
             </div>
             <Footer />

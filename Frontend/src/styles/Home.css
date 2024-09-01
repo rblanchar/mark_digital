@@ -1,6 +1,7 @@
 /*-----------CONTAINER 1------------*/
 .container1 {
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fhome%2Ffnd1.jpg?alt=media');
+    background-image: url('https://res.cloudinary.com/dunvg7cru/image/upload/v1725171132/imagenes/home/d0krpdkfqeuvtfdvaop5.jpg');
+    
     background-size: contain;
     position: absolute;
     background-repeat: no-repeat;
@@ -86,7 +87,7 @@
 }
 
 .img-fl-der {
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fhome%2Ffl_der.png?alt=media');
+    background-image: url('https://res.cloudinary.com/dunvg7cru/image/upload/v1725171132/imagenes/home/qo1r0573wwetve3ciku6.png');
     width: 30px;
     height: 30px;
     background-size: contain;

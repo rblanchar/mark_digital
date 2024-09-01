@@ -23,13 +23,13 @@ const Footer = () => {
                 {/*<h4>Siguenos en</h4> */}
                 <div className="social-icons">
                     <a href="https://www.facebook.com/reel/863584452334870" target="_blank" rel="noopener noreferrer"  aria-label="Facebook">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fsocial%2Ffacebook.png?alt=media" className="social-face" loading='lazy' alt="logo-facebook" />
+                        <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725172376/imagenes/social/qq0wvuivkvkd6kwgniny.png" className="social-face" loading='lazy' alt="logo-facebook" />
                     </a>
                     <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fsocial%2Finst2.jpg?alt=media" alt="logo-instagram" className="social-inst" loading='lazy'/>
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725172375/imagenes/social/jfwsawh8cdei6byw2abu.jpg" alt="logo-instagram" className="social-inst" loading='lazy'/>
                     </a>
                     <a href="https://x.com/?lang=es" target="_blank" rel="noopener noreferrer" aria-label="Twiter">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fsocial%2Fx.png?alt=media" className="social-twt" alt="logo-twiter" loading='lazy' />
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725172376/imagenes/social/swxdt9jubyizqjquf9ie.png" className="social-twt" alt="logo-twiter" loading='lazy' />
                     </a>
                 </div>
             </div>

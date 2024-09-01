@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import "../styles/Login.css";
+import "../styles/ResetPassword.css"
 import Swal from "sweetalert2";
 
 const ResetPassword = () => {
@@ -68,13 +69,13 @@ const ResetPassword = () => {
         <div className="container-login-contenido">
           <h2 className="title-reset-pass">ACTUALIZAR CONTRASEÑA</h2>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Flogin%2Flogo-escala-grises.png?alt=media"
+            src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725172120/imagenes/login/rtxexftuvw2koarf1h8d.png"
             alt="logo-mkdpt"
             loading="lazy"
             className="logo-mkdpt-register"
           />
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Flogin%2Fimagen-login.png?alt=media"
+            src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725172120/imagenes/login/cqdbgmhmg8wmqtc4cwty.png"
             alt="logo-login"
             loading="lazy"
             className="logo-reset-pass"

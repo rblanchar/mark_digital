@@ -110,8 +110,8 @@ const RegisterUser = () => {
         <Navbar />
         <div className="container-register-contenido">
           <h2 className="title-register-user">REGISTRO DE USUARIO</h2>
-          <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Flogin%2Flogo-escala-grises.png?alt=media" alt="logo-mkdpt" loading="lazy" className="logo-mkdpt-register" />
-          <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Flogin%2Fimagen-login.png?alt=media" alt="logo-login" loading="lazy" className="logo-login-register" />
+          <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725172120/imagenes/login/rtxexftuvw2koarf1h8d.png" alt="logo-mkdpt" loading="lazy" className="logo-mkdpt-register" />
+          <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725172120/imagenes/login/cqdbgmhmg8wmqtc4cwty.png" alt="logo-login" loading="lazy" className="logo-login-register" />
           <div id="mensaje">{mensaje}</div>
           <form id="datos-user" onSubmit={handleSubmitEvent}>
             <div>

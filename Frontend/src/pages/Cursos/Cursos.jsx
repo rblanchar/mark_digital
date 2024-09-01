@@ -16,7 +16,7 @@ const Cursos = () => {
                <div className="cont-curso1">
                   <div className="icono-gratis">GRATIS</div>
                   <NavLink to="/Login" className="navlink">
-                     <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fcursos%2FCurso1.jpg?alt=media" alt="img curso1" className="img-curso1" />
+                     <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171474/imagenes/cursos/r8lywkz1fserrjhbl3er.jpg" alt="img curso1" className="img-curso1" />
                   </NavLink>
                   <h4 className="curso-name">hola mundo1</h4>
                   <div className="descr-cur">
@@ -25,8 +25,8 @@ const Cursos = () => {
                   <div className="pie-curso">9 Modulos</div>
                </div>
                <div className="cont-curso2">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fcursos%2Ficono-premium.png?alt=media" alt="icono-premium" className="icono-premium" />
-                  <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fcursos%2FCurso2.jpg?alt=media" alt="img curso2" className="img-curso2" />
+                  <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/akrxsmxpe0ndtudxbmqv.png" alt="icono-premium" className="icono-premium" />
+                  <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171474/imagenes/cursos/cfcfn1qbafunhpvoctf1.jpg" alt="img curso2" className="img-curso2" />
                   <div className="icono-acceso-inmediato">ACCEDE DE FORMA INMEDIATA - $8</div>
                   <h4 className="curso-name">hola mundo2</h4>
                   <div className="descr-cur">
@@ -35,8 +35,8 @@ const Cursos = () => {
                   <div className="pie-curso">3 Modulos</div>
                </div>
                <div className="cont-curso3">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fcursos%2Ficono-premium.png?alt=media" alt="icono-premium" className="icono-premium" />
-                  <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fcursos%2FCurso3.jpg?alt=media" alt="img curso3" className="img-curso3" />
+                  <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/akrxsmxpe0ndtudxbmqv.png" alt="icono-premium" className="icono-premium" />
+                  <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171474/imagenes/cursos/iuh1nn0dnlft7o9jp7nz.jpg" alt="img curso3" className="img-curso3" />
                   <div className="icono-acceso-inmediato">ACCEDE DE FORMA INMEDIATA - $14</div>
                   <h4 className="curso-name">hola mundo3</h4>
                   <div className="descr-cur">
@@ -48,8 +48,8 @@ const Cursos = () => {
                   <div className="pie-curso">7 Modulos</div>
                </div>
                <div className="cont-curso4">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fcursos%2Ficono-premium.png?alt=media" alt="icono-premium" className="icono-premium" />
-                  <img src="https://firebasestorage.googleapis.com/v0/b/marketingdigital-13e4b.appspot.com/o/imagenes%2Fcursos%2FCurso1.jpg?alt=media" alt="img curso4" className="img-curso4" />
+                  <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/akrxsmxpe0ndtudxbmqv.png" alt="icono-premium" className="icono-premium" />
+                  <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171474/imagenes/cursos/r8lywkz1fserrjhbl3er.jpg" alt="img curso4" className="img-curso4" />
                   <div className="icono-acceso-inmediato">ACCEDE DE FORMA INMEDIATA - $8</div>
                   <h4 className="curso-name">hola mundo 4</h4>
                   <div className="descr-cur">
