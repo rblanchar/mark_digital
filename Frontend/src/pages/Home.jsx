@@ -41,7 +41,7 @@ const Home = () => {
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 2
+            items: 1
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
@@ -96,58 +96,57 @@ const Home = () => {
 
                     <Carousel responsive={responsive}>
                         <NavLink to="/Courses">
-                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171474/imagenes/cursos/admat4kx7vlk3bzoddly.jpg" className="C5-curso1" loading="lazy" alt="C5-curso1"></img>
+                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171474/imagenes/cursos/admat4kx7vlk3bzoddly.jpg" className="C5-curso" loading="lazy" alt="curso1"></img>
                         </NavLink>
                         <NavLink to="/Courses">
-                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/qahd4gdhcwexsiirmue2.jpg" className="C5-curso2" loading="lazy" alt="C5-curso2"></img>
+                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/qahd4gdhcwexsiirmue2.jpg" className="C5-curso" loading="lazy" alt="curso2"></img>
                         </NavLink>
                         <NavLink to="/Courses">
-                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/eul5wix6pwhx7ojhfluz.jpg" className="C5-curso3" loading="lazy" alt="C5-curso3"></img>
+                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/eul5wix6pwhx7ojhfluz.jpg" className="C5-curso" loading="lazy" alt="curso3"></img>
                         </NavLink>
                         <NavLink to="/Courses">
-
-                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171474/imagenes/cursos/admat4kx7vlk3bzoddly.jpg" className="C5-curso1" loading="lazy" alt="C5-curso1"></img>
+                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171474/imagenes/cursos/admat4kx7vlk3bzoddly.jpg" className="C5-curso" loading="lazy" alt="curso1"></img>
                         </NavLink>
                         <NavLink to="/Courses">
-                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/qahd4gdhcwexsiirmue2.jpg" className="C5-curso2" loading="lazy" alt="C5-curso2"></img>
+                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/qahd4gdhcwexsiirmue2.jpg" className="C5-curso" loading="lazy" alt="curso2"></img>
                         </NavLink>
                         <NavLink to="/Courses">
-                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/eul5wix6pwhx7ojhfluz.jpg" className="C5-curso3" loading="lazy" alt="C5-curso3"></img>
+                            <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171475/imagenes/cursos/eul5wix6pwhx7ojhfluz.jpg" className="C5-curso" loading="lazy" alt="curso3"></img>
                         </NavLink>
                     </Carousel>
 
                 </div>
             </div>
             <div className="container4">
-                <div className="C4-column1">
+                <div className="C4-column">
                     <p className="T-parrafo">Innovación</p>
                     <p>Aplicamos innovación constante, incorporando las últimas tendencias digitales para mantener a tu negocio siempre competitivo.</p>
-                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171133/imagenes/home/j6jqcc66jc69mrm5wyn2.jpg" className="imagenC4-1" alt="card-1" loading="lazy"></img>
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171133/imagenes/home/j6jqcc66jc69mrm5wyn2.jpg" className="imagenC4" alt="card-1" loading="lazy"></img>
                 </div>
-                <div className="C4-column2">
+                <div className="C4-column">
                     <p className="T-parrafo">Beneficios</p>
                     <p>Aprovecha al máximo tu inversión con soluciones enfocadas en generar beneficios concretos y medibles para tu negocio.</p>
-                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171132/imagenes/home/mtwhstmloe7juzrgcpxy.jpg" className="imagenC4-2" alt="card-2" loading="lazy"></img>
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171132/imagenes/home/mtwhstmloe7juzrgcpxy.jpg" className="imagenC4" alt="card-2" loading="lazy"></img>
                 </div>
-                <div className="C4-column3">
+                <div className="C4-column">
                     <p className="T-parrafo"> Estrategias</p>
                     <p>Diseñamos estrategias personalizadas que alinean tus objetivos con acciones efectivas, garantizando un impacto positivo en tu negocio.</p>
-                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171132/imagenes/home/gtcfvpxgbmrdi71x35jo.jpg" className="imagenC4-3" alt="card-3" loading="lazy"></img>
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171132/imagenes/home/gtcfvpxgbmrdi71x35jo.jpg" className="imagenC4" alt="card-3" loading="lazy"></img>
                 </div>
-                <div className="C4-column4">
+                <div className="C4-column">
                     <p className="T-parrafo">Acompañamiento</p>
                     <p>Te acompañamos en cada paso del camino, brindando soporte continuo para superar desafíos y alcanzar el éxito.</p>
-                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171133/imagenes/home/z2hfkmgm4xp8jp6psljr.jpg" className="imagenC4-4" alt="card-4" loading="lazy"></img>
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171133/imagenes/home/z2hfkmgm4xp8jp6psljr.jpg" className="imagenC4" alt="card-4" loading="lazy"></img>
                 </div>
-                <div className="C4-column5">
+                <div className="C4-column">
                     <p className="T-parrafo">Experiencia</p>
                     <p>Con más de 5 años impulsando emprendimientos, aplicamos nuestra experiencia para lograr resultados excepcionales.</p>
-                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171133/imagenes/home/zeuzyqppn27o6ia7phfa.jpg" className="imagenC4-5" loading="lazy" alt="card-5"></img>
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1726084111/imagenes/home/mahzabbe4sz4fljvoedk.jpg" className="imagenC4" loading="lazy" alt="card-5"></img>
                 </div>
-                <div className="C4-column6">
+                <div className="C4-column">
                     <p className="T-parrafo">Liderazgo</p>
                     <p>Guiamos a emprendedores con liderazgo estratégico, asegurando un crecimiento constante y sostenido en el mercado digital.</p>
-                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171133/imagenes/home/fvvtcodlufc509x4yqll.jpg" className="imagenC4-6" loading="lazy" alt="card-6"></img>
+                    <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725171133/imagenes/home/fvvtcodlufc509x4yqll.jpg" className="imagenC4" loading="lazy" alt="card-6"></img>
                 </div>
             </div>
             <Footer />

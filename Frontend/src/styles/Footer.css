@@ -1,35 +1,104 @@
-/*SOCIAL*/
-.social {
+.container-footer {
+    padding: 3% 10% 1% 10%;
     background-color: #333;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-around;
 
 }
 
+.footer-col-logo {
+    text-align: center;
+}
+
+.logo-footer {
+    margin-top: 65px;
+    width: 200px;
+    height: 73px;
+}
+
+.footer-contacto {
+    font-size: 20px;
+}
+
+.footer-columns ul {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.footer-columns p {
+    color: white;
+}
+
+.footer-col-3 {
+    margin-top: 50px;
+}
+
+.footer-pie {
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+    margin-top: 1.5%;
+}
+
+.footer-pie ul {
+    color: white;
+    margin-left: 10px;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+.social {
+    background-color: #333;
+}
+
 .social-inst {
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    /*margin-top: 10px;*/
+    gap: 10px;
 }
 
 .social-face,
-.social-inst,
-.social-twt {
-    width: 35px;
-    height: 35px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.social-inst {
+    width: 30px;
+    height: 30px;
 }
 
-.footerCopy {
-    background-color: #333;
-    color: #616161;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 12px;
-    padding-bottom: 20px;
+.social-twt {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    bottom: 0.5px;
+}
+
+.social-ytb {
+    width: 38px;
+    height: 28px;
+}
+
+@media(max-width:700px) {
+    .footer-col-3 {
+        margin: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width:460px) {
+    .container-footer {
+        width: 460px;
+
+    }
 }

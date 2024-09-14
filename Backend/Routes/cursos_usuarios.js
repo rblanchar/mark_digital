@@ -43,10 +43,8 @@ router.get('/cursos', verificarToken, async function (req, res, next) {
 });
 
 
-router.post('/', verificarToken, async function (req, res, next) {
-  if (req.userType === 103) {
-    return res.status(403).json({ error: 'No tienes permiso para realizar esta acción' });
-}
+router.post('/', /* verificarToken,  */async function (req, res, next) {
+
   try {
     const userType = req.userType;
     const result = await curso_usuario.create(req.body, userType);

@@ -1,0 +1,61 @@
+.container-misCursos {
+    margin-top: 5%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.title-misCursos {
+    background-color: #ffff;
+    padding-bottom: 2%;
+}
+
+.title-misCursos h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.misCursos {
+    background-color: #ffff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
+    padding-left: 40px;
+    gap: 20px;
+}
+
+.misCursos img {
+    width: 390px;
+    height: 550px;
+    z-index: 1;
+    display: block;
+    margin-bottom: 40px;
+    object-fit: fill;
+    cursor: pointer;  
+}
+
+.columnMisCursos{
+    position: relative;
+    transition: transform 0.8s ease;   
+}
+.columnMisCursos:hover{
+    transform: scale(1.01);
+}
+.icono-disponible{
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(11, 169, 11);
+    color: #ffff;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3px;
+    border-radius: 5px;
+    right: 11%;
+    top: 0.7%;
+    cursor: pointer;
+}

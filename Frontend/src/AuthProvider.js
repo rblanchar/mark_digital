@@ -26,22 +26,31 @@ const AuthProvider = ({ children }) => {
   const loginAction = async (data) => {
     try {
       let response = await loginU(data);
+  
+      if (response && response.mensaje) {
+        return { success: false, message: response.mensaje };
+      }
+
       if (response && response.usuario) {
+        if (!response.usuario.is_verified) {
+          return { success: false, message: "Por favor, verifica tu correo electrónico para continuar." };
+        }
         setUser({ ...response.usuario, tipo: "usuario" });
         setToken(response.token);
         localStorage.setItem("site", response.token);
         navigate("/dashboard");
         return { success: true };
       }
-
-
-      throw new Error(response.error || "Error desconocido");
+  
+      // Manejo de errores genéricos
+      return { success: false, message: response.error || "Error desconocido" };
     } catch (error) {
-      console.error("Error al iniciar sesión:", error.message);
-      return { success: false };
+      console.error('Error en loginAction:', error);
+      return { success: false, message: "Error en el inicio de sesión" };
     }
   };
-
+  
+  
   const logOut = () => {
     setUser(null);
     setToken("");

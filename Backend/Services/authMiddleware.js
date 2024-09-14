@@ -14,8 +14,7 @@ function verificarToken(req, res, next) {
 
         req.userId = payload_decoded.id_usuario;
         req.userName = payload_decoded.nombre_usuario;
-        req.userType = payload_decoded.id_tipo || 0; // Default a 0 si no está presente
-
+        req.userType = payload_decoded.id_tipo || 0;
         next();
     } catch (error) {
         if (error.name === 'TokenExpiredError') {

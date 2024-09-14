@@ -3,7 +3,7 @@ const db = require('./db');
 const config = require('../config');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const {sendThankYouEmail, sendResetPasswordEmail} = require('../Services/emailService');
+const { sendVerificationEmail, sendResetPasswordEmail } = require('../Services/emailService');
 const crypto = require('crypto');
 
 async function getMultiple(page = 1, listPerPage = 10) {
@@ -56,95 +56,156 @@ async function getById(id_usuario) {
     }
 }
 
+async function findByEmailOrUsername(emailOrUsername) {
+    const query = `
+        SELECT * FROM usuarios
+        WHERE correo = ? OR nombre_usuario = ?
+        LIMIT 1
+    `;
+    try {
+        const result = await db.query(query, [emailOrUsername, emailOrUsername]);
+
+        if (result.length > 0) {
+            return result[0]; 
+        } else {
+            return null; 
+        }
+    } catch (error) {
+        console.error('Error al buscar usuario por correo o nombre de usuario:', error.message);
+        throw error;
+    }
+}
+
+async function verifyAccount(user) {
+    try {
+        console.log('Verificando cuenta para usuario:', user.id_usuario);
+
+        await db.query(
+            `UPDATE usuarios SET is_verified = true WHERE id_usuario = ?`,
+            [user.id_usuario]
+        );
+
+        return { message: 'Cuenta verificada con éxito. Puedes iniciar sesión ahora.' };
+    } catch (error) {
+        console.error('Error al verificar la cuenta:', error.message);
+        throw new Error('Error del servidor'); // Puedes cambiar este mensaje si es necesario
+    }
+}
+
+
 
 async function create(usuario) {
+    const connection = await db.pool.getConnection();
     try {
+        await connection.beginTransaction();
+
         const saltRounds = 10;
         const hashedPassword = await bcrypt.hash(usuario.contrasena, saltRounds);
         const nombreApellidosMayuscula = usuario.nombre_apellidos.toUpperCase();
         const idTipo = usuario.id_tipo || 103;
 
-        const result = await db.query(
+        const [result] = await connection.query(
             `INSERT INTO usuarios (id_usuario, nombre_apellidos, nombre_usuario, contrasena, correo, id_tipo) 
-        VALUES (null, ?, ?, ?, ?, ?)`,
+            VALUES (null, ?, ?, ?, ?, ?)`,
             [nombreApellidosMayuscula, usuario.nombre_usuario, hashedPassword, usuario.correo, idTipo]
         );
-        await sendThankYouEmail(usuario.correo, nombreApellidosMayuscula);
+
+        const userId = result.insertId;
+
+        await connection.query(
+            `INSERT INTO cursos_usuarios (id_c_usuario, id_usuario, id_curso) 
+            VALUES (null, ?, 201)`,
+            [userId]
+        );
+
+        await connection.commit();
+
+        const verificationToken = generateVerificationToken(); // Función para generar un token de verificación
+        await connection.query(
+            `UPDATE usuarios SET verification_token = ? WHERE id_usuario = ?`,
+            [verificationToken, userId]
+        );
+
+        const verificationLink = `http://localhost:3001/verify-account/${verificationToken}`;
+        await sendVerificationEmail(usuario.correo, nombreApellidosMayuscula, verificationLink);
+
         return {
-            message: 'Usuario creado exitosamente',
-            // insertId: result.insertId // Descomentar para mostrar el ID insertado
+            message: ' '
         };
+
     } catch (error) {
+        await connection.rollback(); // Revierte la transacción en caso de error
         if (error.code === 'ER_DUP_ENTRY') {
             return { message: 'El nombre de usuario o correo ya está en uso' };
         } else {
             console.error('Error al crear el usuario:', error.message);
             throw error;
         }
+    } finally {
+        connection.release(); // Libera la conexión
     }
+}
+
+function generateVerificationToken() {
+    return require('crypto').randomBytes(32).toString('hex');
 }
 
 const MAX_ATTEMPTS = 5;
 const BLOCK_TIME = 15 * 60 * 1000;
 async function login(usuario, req) {
-    const ip_address = req.ip || 'desconocido'; // Utiliza 'desconocido' como valor por defecto si no se encuentra la IP
+    const ip_address = req.ip || 'desconocido';
 
-    // Asegúrate de que el valor de usuario.nombre_usuario esté definido
     if (!usuario.nombre_usuario) {
-        throw new Error("El nombre de usuario o correo electrónico es obligatorio.");
+        return { mensaje: "El nombre de usuario o correo electrónico es obligatorio." };
     }
 
-    // Determina si el valor proporcionado es un correo electrónico
     const isEmail = /\S+@\S+\.\S+/.test(usuario.nombre_usuario);
-
-    // Modifica la consulta SQL en función de si se usa correo electrónico o nombre de usuario
     const query = isEmail
         ? `SELECT * FROM usuarios WHERE correo = ?`
         : `SELECT * FROM usuarios WHERE nombre_usuario = ?`;
 
     try {
-        // Ejecuta la consulta SQL con el valor proporcionado
         const userResult = await db.query(query, [usuario.nombre_usuario]);
 
-        const dbUser = userResult[0];
-        const mensaje = { mensaje: "Usuario/Contraseña incorrectas" };
+        if (!userResult || userResult.length === 0) {
+            return { mensaje: "No se pudo encontrar el usuario." };
+        }
 
-        if (!dbUser) {
-            await logAttempt(null, ip_address, false); // No hay id_usuario en este caso
-            return mensaje;
+        const dbUser = userResult[0];
+        if (!dbUser.is_verified) {
+            return { mensaje: "Por favor, activa tu cuenta desde tu correo electrónico para continuar." };
         }
 
         const attempts = await getRecentAttempts(dbUser.id_usuario, ip_address);
-
         if (attempts >= MAX_ATTEMPTS) {
             return { mensaje: "Demasiados intentos fallidos. Intente nuevamente más tarde." };
         }
 
-        const esPasswordValido = await bcrypt.compare(usuario.contrasena, dbUser.contrasena);
+        if (!dbUser.contrasena) {
+            return { mensaje: "La contraseña no puede estar vacía." };
+        }
 
+        const esPasswordValido = await bcrypt.compare(usuario.contrasena, dbUser.contrasena);
         if (!esPasswordValido) {
             await logAttempt(dbUser.id_usuario, ip_address, false);
-            return mensaje;
+            return { mensaje: "Usuario o Contraseña incorrecto" };
         }
 
         const token = jwt.sign(
             { id_usuario: dbUser.id_usuario, nombre_usuario: dbUser.nombre_usuario, id_tipo: dbUser.id_tipo },
             config.jwtSecret
-            // { expiresIn: '45m' } // Opcional, para ajustar el tiempo de expiración
         );
 
         await logAttempt(dbUser.id_usuario, ip_address, true);
 
         return {
             token,
-            usuario: {
-                nombre_usuario: dbUser.nombre_usuario,
-            }
+            usuario: { nombre_usuario: dbUser.nombre_usuario, is_verified: dbUser.is_verified }
         };
 
     } catch (error) {
         console.error('Error en login:', error.message);
-        throw error;
+        throw new Error('Error en el proceso de inicio de sesión.');
     }
 }
 
@@ -322,26 +383,26 @@ async function generateResetToken(email) {
 
 async function resetPassword(userId, password) {
     try {
-      // Hashear la nueva contraseña
-      const hashedPassword = await bcrypt.hash(password, 10);
-  
-      // Actualizar la contraseña y eliminar el token
-      await db.query(
-        `UPDATE usuarios SET contrasena = ?, reset_token = NULL, reset_token_expiry = NULL WHERE id_usuario = ?`,
-        [hashedPassword, userId]
-      );
-  
-      return { message: 'Contraseña actualizada exitosamente' };
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        await db.query(
+            `UPDATE usuarios SET contrasena = ?, reset_token = NULL, reset_token_expiry = NULL WHERE id_usuario = ?`,
+            [hashedPassword, userId]
+        );
+
+        return { message: 'Contraseña actualizada exitosamente' };
     } catch (error) {
-      console.error('Error al restablecer la contraseña:', error.message);
-      throw new Error('Error del servidor');
+        console.error('Error al restablecer la contraseña:', error.message);
+        throw new Error('Error del servidor');
     }
-  }
+}
 
 module.exports = {
     getMultiple,
     getAll,
     getById,
+    verifyAccount,
+    findByEmailOrUsername,
     create,
     update,
     remove,

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../AuthProvider";
 import Navbar from "../components/NavBar";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 import "../styles/Login.css";
 
 const Login = () => {
@@ -20,9 +20,10 @@ const Login = () => {
       try {
         const response = await loginAction(input);
         if (response.success) {
-          setMensaje("");
+          setMensaje(""); // Limpiar mensaje si el inicio de sesión es exitoso
+          // Puedes redirigir al usuario a otra página aquí si es necesario
         } else {
-          setMensaje("Usuario o contraseña incorrecta");
+          setMensaje(response.message); // Mostrar mensaje recibido del servidor
         }
       } catch (error) {
         setMensaje("Error en el inicio de sesión");
@@ -48,7 +49,7 @@ const Login = () => {
           <h2 className="title-login-user">ACCESO DE USUARIO</h2>
           <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725172120/imagenes/login/rtxexftuvw2koarf1h8d.png" alt="logo-mkdpt" loading="lazy" className="logo-mkdpt" />
           <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725172120/imagenes/login/cqdbgmhmg8wmqtc4cwty.png" alt="logo-login" loading="lazy" className="logo-login" />
-          <div id="mensaje">{mensaje}</div>
+          {mensaje && <div id="mensaje">{mensaje}</div>} {/* Mostrar mensaje */}
           <form id="datos" onSubmit={handleSubmitEvent}>
             <div>
               <label htmlFor="user-name"></label>
@@ -59,6 +60,7 @@ const Login = () => {
                 aria-describedby="user-name"
                 aria-invalid="false"
                 placeholder="Usuario o Correo electronico"
+                autoComplete="off"
                 onChange={handleInput}
               />
               <div id="user-name" className="sr-onlyLG"></div>
@@ -72,6 +74,7 @@ const Login = () => {
                 aria-describedby="user-password"
                 aria-invalid="false"
                 placeholder="Contraseña"
+                autoComplete="off"
                 onChange={handleInput}
               />
               <div id="user-password" className="sr-onlyLG"></div>
@@ -80,11 +83,11 @@ const Login = () => {
               Si no recuerdas tu contraseña, haz clic en <a href="/forgot-password"> <u>Olvidé mi Contraseña</u></a> para iniciar el proceso de recuperación y acceder nuevamente a tu cuenta.
             </div>
             <div className="cont-registrarse">
-              <div>
+              <div className="cont-registrarse2">
                 <p>
                   ¿Aún no tienes una cuenta?<br />
                 </p>
-                <NavLink to="/register/user">
+                <NavLink to="/register-user">
                   <span className="enlace-registrarse"> <b>Registrarse</b></span>
                 </NavLink>
               </div>

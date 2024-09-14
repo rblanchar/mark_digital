@@ -49,9 +49,9 @@ const ForgotPassword = () => {
     <div>
       <div className="container-olvido">
         <Navbar />
-        <div className="container-login-contenido">
+        <div className="container-forgot-contenido">
           <h2 className="title-reset-pass">REESTABLECER CONTRASEÑA</h2>
-          <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725172120/imagenes/login/rtxexftuvw2koarf1h8d.png" alt="logo-mkdpt" loading="lazy" className="logo-mkdpt" />
+          <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725172120/imagenes/login/rtxexftuvw2koarf1h8d.png" alt="logo-mkdpt" loading="lazy" className="logo-mkdpt-reset" />
           <img src="https://res.cloudinary.com/dunvg7cru/image/upload/v1725172120/imagenes/login/cqdbgmhmg8wmqtc4cwty.png" alt="logo-login" loading="lazy" className="logo-reset-pass" />
           <form id="datos" onSubmit={handleForgotPassword}>
             <div>

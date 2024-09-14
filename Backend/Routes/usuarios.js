@@ -5,6 +5,8 @@ const router = express.Router();
 const usuario = require('../Services/usuarios');
 const verificarToken = require('../Services/authMiddleware');
 const verificarResetToken = require('../Services/verificarResetToken');
+const verificarAccountToken = require('../Services/verificarAccountToken');
+
 
 router.get('/', /* verificarToken, */ async function (req, res, next) {
   try {
@@ -47,6 +49,8 @@ router.get('/:id', verificarToken, async function (req, res, next) {
   }
 });
 
+
+
 router.post('/', async function (req, res, next) {
   try {
     const result = await usuario.create(req.body);
@@ -70,6 +74,7 @@ router.post('/login', async function (req, res, next) {
     next(err);
   }
 });
+
 
 router.put('/:id', verificarToken, async function (req, res, next) {
   const { id } = req.params;
@@ -116,10 +121,25 @@ router.post('/forgot-password', async function (req, res, next) {
   }
 });
 
+router.get('/verify-account/:token', verificarAccountToken, async (req, res) => {
+  const user = req.user;
+
+  try {
+    const result = await usuario.verifyAccount(user);  // Verifica si estás llamando a la función correctamente
+    console.log('Resultado de verifyAccount:', result);
+
+    res.json(result);  // Asegúrate de devolver el resultado correctamente
+  } catch (error) {
+    console.error('Error al verificar la cuenta:', error.message);
+    res.status(500).json({ error: 'Error del servidor' });
+  }
+});
+
+
 
 router.post('/reset-password', verificarResetToken, async (req, res) => {
   const { password } = req.body;
-  const user = req.user; // Usuario obtenido del middleware
+  const user = req.user; 
 
   try {
     const result = await usuario.resetPassword(user.id_usuario, password);
@@ -129,5 +149,7 @@ router.post('/reset-password', verificarResetToken, async (req, res) => {
     res.status(500).json({ error: 'Error del servidor' });
   }
 });
+
+
 
 module.exports = router;

@@ -31,10 +31,11 @@ async function getAll(userType) {
 async function getCursosByUsuario(idUsuario) {
     try {
         const result = await db.query(
-            `SELECT c.nombre
+            `SELECT c.nombre, c.image
                 FROM cursos c
                 JOIN cursos_usuarios cu ON c.id_curso = cu.id_curso
-                WHERE cu.id_usuario = ?`,
+                WHERE cu.id_usuario = ?
+                ORDER BY id_c_usuario DESC`,
             [idUsuario]
         );
         return result;
@@ -46,9 +47,6 @@ async function getCursosByUsuario(idUsuario) {
 
 async function create(curso_usuario, userType) {
     try {
-        if (userType !== 101) {
-            return { message: 'No tienes permiso para crear Cursos_Usuarios' };
-        }
 
         const result = await db.query(
             `INSERT INTO cursos_usuarios (id_c_usuario, id_usuario, id_curso) 

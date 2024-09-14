@@ -23,22 +23,35 @@ const RegisterUser = () => {
   const captcha = useRef(null);
   const navigate = useNavigate();
 
+  const validatePassword = (password) => {
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#+$%^&*(),.?":{}|<>])[A-Za-z\d!@#+$%^&*(),.?":{}|<>]{8,}$/;
+
+    return passwordRegex.test(password);
+  };
+
   const handleSubmitEvent = async (e) => {
     e.preventDefault();
 
     submit(e);
 
-    if (!usuarioValido) {
-      setMensajeCaptcha("Por favor, completa el captcha correctamente.");
+    if (!validatePassword(usuario.contrasena)) {
+      setMensaje("La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y un carácter especial.");
       return;
+    } else {
+      setMensaje("");
     }
+
+
 
     if (usuario.nombre_apellidos.trim() !== "" &&
       usuario.nombre_usuario.trim() !== "" &&
       usuario.contrasena.trim() !== "" &&
       usuario.correo.trim() !== "" &&
-      usuario.contrasena === usuario.confirmar_contrasena) { 
-
+      usuario.contrasena === usuario.confirmar_contrasena) {
+      if (!usuarioValido) {
+        setMensajeCaptcha("Por favor, completa el captcha correctamente.");
+        return;
+      }
       try {
         const response = await fetch("http://localhost:3000/api/usuarios", {
           method: "POST",
@@ -55,11 +68,11 @@ const RegisterUser = () => {
             nombre_apellidos: "",
             nombre_usuario: "",
             contrasena: "",
-            confirmar_contrasena: "", 
+            confirmar_contrasena: "",
             correo: ""
           });
           Swal.fire({
-            text: "Usuario registrado con Éxito!",
+            text: "Usuario registrado con Éxito!, por favor confirma tu cuenta en tu correo",
             icon: "success",
             confirmButtonText: "OK"
           }).then(() => {
@@ -123,6 +136,7 @@ const RegisterUser = () => {
                 aria-describedby="name"
                 aria-invalid="false"
                 placeholder="Nombre Completo"
+                autoComplete="off"
                 value={usuario.nombre_apellidos}
                 onChange={handleInput}
               />
@@ -136,6 +150,7 @@ const RegisterUser = () => {
                 aria-describedby="user-name"
                 aria-invalid="false"
                 placeholder="Usuario"
+                autoComplete="off"
                 value={usuario.nombre_usuario}
                 onChange={handleInput}
               />
@@ -150,6 +165,7 @@ const RegisterUser = () => {
                   aria-describedby="user-password"
                   aria-invalid="false"
                   placeholder="Contraseña"
+                  autoComplete="off"
                   value={usuario.contrasena}
                   onChange={handleInput}
                   className="input-pass"
@@ -164,6 +180,7 @@ const RegisterUser = () => {
                   aria-describedby="user-password"
                   aria-invalid="false"
                   placeholder="Confirmar Contraseña"
+                  autoComplete="off"
                   value={usuario.confirmar_contrasena}
                   onChange={handleInput}
                   className="input-pass"
@@ -179,12 +196,13 @@ const RegisterUser = () => {
                 aria-describedby="user-email"
                 aria-invalid="false"
                 placeholder="Correo electronico"
+                autoComplete="off"
                 value={usuario.correo}
                 onChange={handleInput}
               />
             </div>
             <div className="cont-registrarse">
-              <div>
+              <div className="cont-registrarse2">
                 <p>
                   ¿Ya estas registrado?<br />
                 </p>

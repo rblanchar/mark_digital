@@ -45,7 +45,7 @@ input {
     color: #ffff;
     z-index: 3;
     left: 30%;
-    top: 32%;
+    top: 34%;
     text-shadow:
         1px 1px 0 #000;
 }
@@ -101,4 +101,55 @@ input {
     box-shadow: none;
     font-size: 16px;
     cursor: pointer;
+}
+
+@media(max-width:700px){
+    .container-login{
+        width: 700px;
+    }
+    .container-login-contenido{
+        width: 680px;
+    }
+    .olvide-pass{
+        margin-left: 103px;
+    }
+    .cont-registrarse2{
+        margin-left: 20px;
+    }
+}
+
+@media(max-width:460px){
+    .container-login{
+        width: 460px;
+        text-align: left;
+    }
+    .container-login-contenido{
+        width: 440px;
+        padding: 0px;
+        text-align: center;
+    }
+    .logo-login{
+        width: 360px;
+        height: 170px;
+    }
+    .logo-mkdpt{
+        top: 0.5%;
+        left: 31%;
+    }
+    .title-login-user{
+        top: 25%;
+        left: 23%;
+    }
+    .olvide-pass{
+        width: 68%;
+        margin-left: 70px;
+        font-size: 15px;
+        text-align: justify;
+    }
+
+    .cont-registrarse,
+    .cont-registrarse2{
+        width: 70%;
+        margin-left: -15px;
+    }
 }

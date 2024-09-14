@@ -9,21 +9,22 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const sendThankYouEmail = (userEmail, userName) => {
+const sendVerificationEmail = async (userEmail, userName, verificationLink) => {
   const mailOptions = {
-    from: 'rebf82@gmail.com',
+    from: '"MarketingDigital" <tu-email@gmail.com>', // Cambia esto a tu email
     to: userEmail,
-    subject: 'Gracias por registrarte en nuestra página',
-    text: `¡Hola ${userName}!\n\nGracias por unirte a nuestra comunidad. Estamos emocionados de tenerte con nosotros.\n\nSaludos,\nEl equipo de Marketing Digital`,
-   };
+    subject: 'Verifica tu correo electrónico',
+    html: `<p>¡Hola ${userName}!</p>
+           <p>Gracias por registrarte en nuestra página. Por favor, verifica tu correo electrónico haciendo click en el siguiente enlace:</p>
+           <a href="${verificationLink}">Verificar Correo Electrónico</a>
+           <p>Si no creaste esta cuenta, por favor ignora este mensaje.</p>`,
+  };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log('Error al enviar el correo:', error);
-    } else {
-      console.log('Correo enviado:', info.response);
-    }
-  });
+  try {
+    await transporter.sendMail(mailOptions);
+  } catch (error) {
+    console.error('Error al enviar el correo de verificación:', error);
+  }
 };
 
 const sendResetPasswordEmail = async (to, resetLink) => {
@@ -45,7 +46,7 @@ const sendResetPasswordEmail = async (to, resetLink) => {
 
 
 module.exports = {
-  sendThankYouEmail,
+  sendVerificationEmail,
   sendResetPasswordEmail,
 };
  

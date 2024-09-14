@@ -27,10 +27,12 @@ input {
     padding: 10px;
     outline: none;
 }
-.input-pass{
+
+.input-pass {
     width: 92.5%;
     margin-left: 20px;
 }
+
 .logo-login-register {
     width: 500px;
     height: 190px;
@@ -53,8 +55,8 @@ input {
     position: absolute;
     color: #ffff;
     z-index: 3;
-    left: 30%;
-    top: 24%;
+    left: 29%;
+    top: 26%;
     text-shadow:
         1px 1px 0 #000;
 }
@@ -92,4 +94,69 @@ input {
 .error-captcha {
     margin-top: 10px;
     color: red;
+}
+
+@media(max-width:700px) {
+    .container-register {
+        width: 700px;
+    }
+
+    .container-register-contenido {
+        width: 100%;
+    }
+
+    .cont-password {
+        display: block;
+        width: 485px;
+        margin-left: 68px;
+    }
+
+    .cont-registrarse2 {
+        margin-left: 25px;
+    }
+
+    .recaptcha {
+        margin-top: 40px;
+        margin-left: 150px;
+    }
+}
+
+@media(max-width:460px) {
+    .container-register {
+        width: 460px;
+    }
+
+    .logo-login-register {
+        width: 360px;
+        height: 170px;
+    }
+
+    .logo-mkdpt-register {
+        top: 3%;
+        left: 31%;
+    }
+
+    .title-register-user {
+        top: 20%;
+        left: 23%;
+    }
+
+    .container-register-contenido {
+        width: 100%;
+    }
+
+    .cont-password {
+        display: block;
+        width: 305px;
+        margin-left: 39px;
+    }
+
+    .cont-registrarse2 {
+        margin-left: -25px;
+    }
+
+    .recaptcha {
+        margin-top: 40px;
+        margin-left: 50px;
+    }
 }

@@ -1,0 +1,56 @@
+.container-verify {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    height: 100vh;
+    background-color: rgb(252, 252, 252);
+}
+
+.container-verify-contenido {
+    margin-top: 100px;
+    width: 40%;
+    text-align: center;
+    display: block;
+    position: absolute;
+}
+
+.logo-mkdpt-verify {
+    left: 36%;
+    top: 1%;
+    position: absolute;
+    width: 180px;
+    height: 70px;
+    z-index: 2;
+}
+
+.logo-verify {
+    width: 500px;
+    height: 190px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+}
+
+.title-verify {
+    width: 100%;
+    position: absolute;
+    color: #ffff;
+    z-index: 2;
+    text-align: center;
+    bottom: 37%;
+    text-shadow:
+        1px 1px 0 #000;
+}
+
+.verify-goTologin {
+    color: #afaeae;
+    font-size: 15px;
+    text-align: center;
+}
+
+.verify-goTologin a {
+    color: inherit;
+    color: #000;
+
+}

@@ -1,0 +1,65 @@
+.divPrivacy {
+    margin-top: 6%;
+}
+
+.containerPrivacy {
+    max-width: auto;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 0px 5px 60px;
+    text-align: justify;
+}
+
+.containerPrivacy h2 {
+    margin-left: 10px;
+}
+
+.containerPrivacy h3 {
+    padding: 10px;
+}
+
+.containerPrivacy p {
+    justify-content: left;
+    padding: 10PX
+}
+
+.containerPrivacy li {
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.okokok{
+    color: yellow;
+}
+
+@media(max-width:700px){
+    .containerPrivacy{
+        margin: 0px 20px;
+    }
+    .divPrivacy{
+        margin-top: 8%;
+    }
+    .TitlePrivacy,
+    .titlePrivacy{
+        padding-top: 20px;
+        text-align: center;
+    }
+}
+
+@media(max-width:460px){
+
+    .containerPrivacy{
+        width: 450px;
+        margin: 0px;
+        padding: 10px;
+    }
+    .divPrivacy{
+        margin-top: 12%;
+    }
+
+    .TitlePrivacy,
+    .titlePrivacy{
+        padding-top: 20px;
+        text-align: center;
+    }
+}
