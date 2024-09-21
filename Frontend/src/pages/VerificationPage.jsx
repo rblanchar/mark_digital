@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import Navbar from "../components/NavBar";
 import '../styles/VerificationPage.css';
 
 const VerificationPage = () => {
@@ -11,7 +10,7 @@ const VerificationPage = () => {
     useEffect(() => {
         const verifyAccount = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/api/usuarios/verify-account/${token}`, {
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/usuarios/verify-account/${token}`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",

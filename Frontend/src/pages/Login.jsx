@@ -20,8 +20,7 @@ const Login = () => {
       try {
         const response = await loginAction(input);
         if (response.success) {
-          setMensaje(""); // Limpiar mensaje si el inicio de sesión es exitoso
-          // Puedes redirigir al usuario a otra página aquí si es necesario
+          setMensaje(""); 
         } else {
           setMensaje(response.message); // Mostrar mensaje recibido del servidor
         }
@@ -80,10 +79,10 @@ const Login = () => {
               <div id="user-password" className="sr-onlyLG"></div>
             </div>
             <div className="olvide-pass">
-              Si no recuerdas tu contraseña, haz clic en <a href="/forgot-password"> <u>Olvidé mi Contraseña</u></a> para iniciar el proceso de recuperación y acceder nuevamente a tu cuenta.
+              Si no recuerdas tu contraseña, haz clic en <NavLink to="/forgot-password"> <u>Olvidé mi Contraseña</u></NavLink> para iniciar el proceso de recuperación y acceder nuevamente a tu cuenta.
             </div>
-            <div className="cont-registrarse">
-              <div className="cont-registrarse2">
+            <div className="cont-registrarse-login">
+              <div className="cont-registrarse2-login">
                 <p>
                   ¿Aún no tienes una cuenta?<br />
                 </p>

@@ -6,7 +6,7 @@ const AuthContext = createContext();
 
 const loginU = async function (data) {
   const usuario = { nombre_usuario: data.username, contrasena: data.password };
-  const response = await fetch("http://localhost:3000/api/usuarios/login", {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/usuarios/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

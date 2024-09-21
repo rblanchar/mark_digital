@@ -80,7 +80,7 @@
     font-size: 20px;
 }
 
-.navlink:visited {
+.btn-acceder:visited {
     color: inherit;
 }
 
@@ -349,10 +349,15 @@
         margin: 10px;
     }
 }
-
-@media(max-width: 460px) {
+@media(max-width: 465px) {
     .container1 {
         background-image: none;
+        width: 460px;
+    }
+
+    .btn-acceder {
+        width: 80%;
+        margin-left: -40px;
     }
 
     .container2 {
@@ -363,17 +368,19 @@
 
     .container2 h2 {
         padding: 10px;
-        padding-bottom: 80px;
+        padding-bottom: 50px;
     }
 
     .btn-accedeCursos {
-        margin-top: 5.5%;
-        margin-left: 5%;
-        width: 90%;
+        margin-top: 70px;
+        margin-left: 10px;
+        width: 95%;
+        padding: 0px;
     }
 
+
     .img-fl-der {
-        top: 12px;
+        top: 13px;
     }
 
     .container3 {
@@ -382,22 +389,30 @@
 
     .C3-columna-2 {
         margin: 0px;
-        margin-left: 40px;
+        margin-left: 20px;
         text-align: justify;
     }
 
     .C3-columna-2 h3 {
         text-align: center;
-        margin-left: -20px;
+        margin-left: 0px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .C3-columna-2 p {
+        width: 410px;
     }
 
     .imagenC3 {
         margin-top: 40px;
-        margin-left: 30px;
+        margin-left: 35px;
+        width: 390px;
+        height: 390px;
     }
 
     .container4 {
-        width: 450px;
+        width: 460px;
         grid-template-columns: repeat(1, 1fr);
         gap: 20px;
         padding: 15%;
@@ -411,8 +426,106 @@
         font-size: 30px;
     }
 
+    .container5 {
+        padding-left: 20px;
+    }
+
     .containerF5 {
-        width: 450px;
+        width: 460px;
+    }
+
+    .react-multi-carousel-list,
+    .react-multi-carousel-track {
+        width: 350px;
+    }
+
+    .containerF5 .h3-C5 {
+        margin: 0px;
+        text-align: center;
+    }
+}
+@media(max-width: 435px) {
+    .container1 {
+        background-image: none;
+        width: 430px;
+    }
+
+    .btn-acceder {
+        width: 80%;
+        margin-left: -40px;
+    }
+
+    .container2 {
+        background-color: rgb(27, 27, 27);
+        width: 430px;
+        height: 800px;
+    }
+
+    .container2 h2 {
+        padding: 10px;
+        padding-bottom: 50px;
+    }
+
+    .btn-accedeCursos {
+        margin-left: 10px;
+        width: 95%;
+        padding: 0px;
+    }
+
+
+    .img-fl-der {
+        top: 13px;
+    }
+
+    .container3 {
+        width: 430px;
+    }
+
+    .C3-columna-2 {
+        margin: 0px;
+        margin-left: 20px;
+        text-align: justify;
+    }
+
+    .C3-columna-2 h3 {
+        text-align: center;
+        margin-left: 0px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .C3-columna-2 p {
+        width: 390px;
+    }
+
+    .imagenC3 {
+        margin-top: 40px;
+        margin-left: 20px;
+        width: 390px;
+        height: 390px;
+    }
+
+    .container4 {
+        width: 430px;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        padding: 13%;
+    }
+
+    .container4 .C4-column {
+        width: 320px;
+    }
+
+    .T-parrafo {
+        font-size: 30px;
+    }
+
+    .container5 {
+        margin-left: 20px;
+    }
+
+    .containerF5 {
+        width: 430px;
     }
 
     .react-multi-carousel-list,

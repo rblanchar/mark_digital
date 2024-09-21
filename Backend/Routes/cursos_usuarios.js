@@ -34,7 +34,7 @@ router.get('/all', verificarToken, async function(req, res, next) {
 
 router.get('/cursos', verificarToken, async function (req, res, next) {
   try {
-      const cursos = await curso_usuario.getCursosByUsuario(req.userId);
+      const cursos = await curso_usuario.getCursosByUsuario(req.userId, req.userType);
       res.json(cursos);
   } catch (err) {
       console.error(`Error while getting cursos for user`, err.message);

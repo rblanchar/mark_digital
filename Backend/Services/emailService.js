@@ -1,7 +1,14 @@
 
 const nodemailer = require("nodemailer");
-
+//re_Gk2GQQGt_GfuK7Z7Li3h7K9JCSqDLD1VD
 const transporter = nodemailer.createTransport({
+/*   host: "smtp.resend.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: "resend",
+    pass: "re_6sNFtnjH_7R9ZbeJpQDk7HoZWHXrZp8ko",
+  } */
   service: 'gmail', 
   auth: {
     user: 'rblanchar@unicesar.edu.co',
@@ -11,7 +18,7 @@ const transporter = nodemailer.createTransport({
 
 const sendVerificationEmail = async (userEmail, userName, verificationLink) => {
   const mailOptions = {
-    from: '"MarketingDigital" <tu-email@gmail.com>', // Cambia esto a tu email
+    from: '"MarketingDigital" <info@mdigitalparatodos.netlify.app>', // Cambia esto a tu email
     to: userEmail,
     subject: 'Verifica tu correo electrónico',
     html: `<p>¡Hola ${userName}!</p>
@@ -28,28 +35,28 @@ const sendVerificationEmail = async (userEmail, userName, verificationLink) => {
 };
 
 const sendResetPasswordEmail = async (to, resetLink) => {
-    const mailOptions = {
-      from: 'rebf82@gmail.com',
-      to,
-      subject: 'Restablecimiento de Contraseña',
-      text: `Puedes restablecer tu contraseña haciendo clic en el siguiente enlace: ${resetLink}`,
-      html: `<p>Puedes restablecer tu contraseña haciendo clic en el siguiente enlace:</p><a href="${resetLink}">Restablecer Contraseña</a>`
-    };
-  
-    try {
-      await transporter.sendMail(mailOptions);
-      console.log('Correo de restablecimiento de contraseña enviado.');
-    } catch (error) {
-      console.log('Error al enviar el correo de restablecimiento de contraseña:', error);
-    }
+  const mailOptions = {
+    from: 'rebf82@gmail.com',
+    to,
+    subject: 'Restablecimiento de Contraseña',
+    text: `Puedes restablecer tu contraseña haciendo clic en el siguiente enlace: ${resetLink}`,
+    html: `<p>Puedes restablecer tu contraseña haciendo clic en el siguiente enlace:</p><a href="${resetLink}">Restablecer Contraseña</a>`
   };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log('Correo de restablecimiento de contraseña enviado.');
+  } catch (error) {
+    console.log('Error al enviar el correo de restablecimiento de contraseña:', error);
+  }
+};
 
 
 module.exports = {
   sendVerificationEmail,
   sendResetPasswordEmail,
 };
- 
+
 /*
 const { Resend } = require('resend');
 

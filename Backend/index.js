@@ -1,3 +1,6 @@
+require('dotenv').config({ path: process.env.NODE_ENV === 'production' ? '.env' : '.env.development' });
+
+
 const express = require("express");
 const usuariosRouter = require("./Routes/usuarios");
 const tipoUsuariosRouter = require("./Routes/tipo_usuarios");
@@ -9,7 +12,8 @@ const intentosLoginRouter = require("./Routes/intentos_login");
 const cors = require('cors');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
 app.use(express.json());
 app.use(
   express.urlencoded({
@@ -18,7 +22,10 @@ app.use(
 );
 
 var corsOptions = {
-  origin: "http://localhost:3001",
+  origin: [
+    "http://localhost:3001", 
+    "https://mdigitalparatodos.netlify.app"
+  ],
   optionsSuccessStatus: 200, 
 };
 

@@ -56,22 +56,22 @@ input {
     margin: 0;
 }
 
-.cont-registrarse {
+.cont-registrarse-login {
     display: flex;
     justify-content: left;
     margin-left: 85px;
     width: 40%;
 }
 
-.cont-registrarse p {
+.cont-registrarse-login p {
     align-content: flex-start;
 }
 
-.cont-registrarse a {
+.cont-registrarse-login a {
     color: inherit;
 }
 
-.cont-registrarse p:visited {
+.cont-registrarse-login p:visited {
     color: inherit;
 }
 
@@ -109,22 +109,25 @@ input {
     }
     .container-login-contenido{
         width: 680px;
+        top: 5%;
     }
     .olvide-pass{
         margin-left: 103px;
     }
-    .cont-registrarse2{
+    .cont-registrarse2-login{
         margin-left: 20px;
     }
 }
 
-@media(max-width:460px){
+
+@media(max-width:465px){
     .container-login{
         width: 460px;
         text-align: left;
     }
     .container-login-contenido{
-        width: 440px;
+        top: 12%;
+        width: 460px;
         padding: 0px;
         text-align: center;
     }
@@ -147,9 +150,54 @@ input {
         text-align: justify;
     }
 
-    .cont-registrarse,
-    .cont-registrarse2{
-        width: 70%;
-        margin-left: -15px;
+    .cont-registrarse-login,
+    .cont-registrarse2-login{
+        width: 55%;
+        margin-left: 30px;
+    }
+    .btn-submit-login{
+        right: 65px;
+        bottom: 10px;
+    }
+}
+
+@media(max-width:435px){
+    .container-login{
+        width: 430px;
+        text-align: left;
+    }
+    .container-login-contenido{
+        width: 430px;
+        padding: 0px;
+        text-align: center;
+        top: 12%;
+    }
+    .logo-login{
+        width: 360px;
+        height: 170px;
+    }
+    .logo-mkdpt{
+        top: 0.5%;
+        left: 31%;
+    }
+    .title-login-user{
+        top: 25%;
+        left: 23%;
+    }
+    .olvide-pass{
+        width: 68%;
+        margin-left: 70px;
+        font-size: 15px;
+        text-align: justify;
+    }
+
+    .cont-registrarse-login,
+    .cont-registrarse2-login{
+        width: 55%;
+        margin-left: 30px;
+    }
+    .btn-submit-login{
+        right: 65px;
+        bottom: 10px;
     }
 }

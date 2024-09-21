@@ -17,7 +17,7 @@ router.get('/', /* verificarToken, */ async function (req, res, next) {
   }
 });
 
-router.get('/all',verificarToken , async function (req, res, next) {
+router.get('/all',/* verificarToken , */ async function (req, res, next) {
   try {
     const result = await usuario.getAll(req.userType);
 
@@ -67,7 +67,7 @@ router.post('/', async function (req, res, next) {
 
 router.post('/login', async function (req, res, next) {
   try {
-    const result = await usuario.login(req.body, req); // Pasa `req` a la función `login`
+    const result = await usuario.login(req.body, req); 
     res.json(result);
   } catch (err) {
     console.error(`Error while logging in`, err.message);

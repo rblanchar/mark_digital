@@ -27,7 +27,7 @@ async function getMultiple(page = 1, listPerPage = 10) {
 }
 
 async function getAll(userType) {
-    if (userType !== 101) {
+     if (userType !== 101) {
         return { error: 'No tienes permiso para acceder a esta información' };
     }
 
@@ -126,7 +126,7 @@ async function create(usuario) {
             [verificationToken, userId]
         );
 
-        const verificationLink = `http://localhost:3001/verify-account/${verificationToken}`;
+        const verificationLink = `${process.env.REACT_APP_FRONTEND_URL}/verify-account/${verificationToken}`;
         await sendVerificationEmail(usuario.correo, nombreApellidosMayuscula, verificationLink);
 
         return {
@@ -371,7 +371,7 @@ async function generateResetToken(email) {
         );
 
         // Enviar un correo al usuario con el token
-        const resetLink = `http://localhost:3001/reset-password/${resetToken}`;
+        const resetLink = `${process.env.REACT_APP_FRONTEND_URL}/reset-password/${resetToken}`;
         await sendResetPasswordEmail(user.correo, resetLink);
 
         return { message: 'Correo de restablecimiento enviado' };

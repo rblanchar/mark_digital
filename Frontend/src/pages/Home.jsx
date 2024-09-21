@@ -65,7 +65,7 @@ const Home = () => {
                     </CSSTransition>
                 </SwitchTransition>
                 <div className="btn-accedeCursos">
-                    <NavLink to="/Courses" className="navlink">
+                    <NavLink to="/Courses" className="btn-acceder">
                         Accede a Nuestros Cursos <b>GRATIS</b>
                         <div className="img-fl-der"></div>
                     </NavLink>

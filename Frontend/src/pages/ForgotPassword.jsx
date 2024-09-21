@@ -11,7 +11,7 @@ const ForgotPassword = () => {
   const handleForgotPassword = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/api/usuarios/forgot-password", {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/usuarios/forgot-password`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const ForgotPassword = () => {
                   <span> <i><u>Regresar a Inicio de Sesión</u></i></span>
                 </NavLink>
               </div>
-              <button className="btn-submit-login"><b>REESTABLECER</b></button>
+              <button className="btn-submit-restablecer"><b>REESTABLECER</b></button>
             </div>
           </form>
         </div>

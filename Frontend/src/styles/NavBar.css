@@ -31,19 +31,6 @@
   margin: 0;
   padding: 0;
   margin-left: 10%;
-
-}
-
-.logo-l {
-  width: 1px;
-  height: 40px;
-  background-color: #ffff;
-  margin: 5px 8px;
-}
-
-.logo-b {
-  font-size: 12px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .navbar {
@@ -52,7 +39,10 @@
   align-items: center;
   gap: 30px;
   margin-right: 120px;
-  z-index: 100;
+}
+
+.navbar.active {
+  display: block; /* Para mostrar el menú en pantallas pequeñas cuando se haga clic en el icono */
 }
 
 .navbar a {
@@ -78,6 +68,15 @@
   width: 100%;
 }
 
+.hamburger-menu {
+  display: none; /* Oculto en pantallas grandes */
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  padding-right: 20px;
+}
+
+/* Estilos del menú desplegable */
 .dropdown {
   position: relative;
 }
@@ -85,7 +84,6 @@
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  /* Despliega el menú justo debajo del enlace "Mi cuenta" */
   left: 0;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -106,41 +104,47 @@
   background-color: #f0f0f0;
 }
 
-@media(max-width:700px) {
-  .header {
-    width: 700px;
+/* Media Queries para pantallas pequeñas */
+
+
+@media(max-width: 700px) {
+  .navbar {
+    display: none; /* Oculta el menú en pantallas pequeñas por defecto */
   }
 
-  .navbar {
-    margin-right: 30px;
+  .hamburger-menu {
+    display: block; /* Muestra el ícono del menú en pantallas pequeñas */
+  }
+
+  .navbar.active {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 0;
+    position: absolute;
+    right: 0;
+    top: 60px; /* Ajustar según el tamaño del header */
+    background-color: #11042496;
+    width: 100%;
+    padding: 10px;
+    padding-top: 0px;
+  }
+
+  .navbar a {
+    text-align: left;
+    padding: 10px;
+  }
+}
+@media(max-width:465px){
+  .container-nav,
+  .header{
+    width: 460px;
   }
 }
 
-@media(max-width:460px) {
-  .TitleCursos {
-    width: 450px;
-  }
-
-  .header {
-    width: 460px;
-  }
-
-  .logo {
-    margin: 0px;
-  }
-
-  .logo.active {
-    margin: 0px;
-  }
-
-  .navbar {
-    margin: 0px;
-    gap: 8px;
-    text-align: right;
-    margin-right: 30px;
-  }
-
-  .cont-curso {
-    margin-left: 20px;
+@media(max-width:435px){
+  .container-nav,
+  .header{
+    width: 435px;
   }
 }

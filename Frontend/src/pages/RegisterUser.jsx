@@ -32,8 +32,17 @@ const RegisterUser = () => {
   const handleSubmitEvent = async (e) => {
     e.preventDefault();
 
-    submit(e);
+    // Validación del captcha
+    if (!captcha.current.getValue()) {
+      setMensajeCaptcha("Por favor, completa el captcha correctamente.");
+      cambiarCaptchaValido(false);
+      return;
+    } else {
+      cambiarCaptchaValido(true);
+      setMensajeCaptcha(""); // Limpiar mensaje de error si el captcha es válido
+    }
 
+    // Validación de la contraseña
     if (!validatePassword(usuario.contrasena)) {
       setMensaje("La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y un carácter especial.");
       return;
@@ -41,19 +50,16 @@ const RegisterUser = () => {
       setMensaje("");
     }
 
-
-
-    if (usuario.nombre_apellidos.trim() !== "" &&
+    // Validación de campos
+    if (
+      usuario.nombre_apellidos.trim() !== "" &&
       usuario.nombre_usuario.trim() !== "" &&
       usuario.contrasena.trim() !== "" &&
       usuario.correo.trim() !== "" &&
-      usuario.contrasena === usuario.confirmar_contrasena) {
-      if (!usuarioValido) {
-        setMensajeCaptcha("Por favor, completa el captcha correctamente.");
-        return;
-      }
+      usuario.contrasena === usuario.confirmar_contrasena
+    ) {
       try {
-        const response = await fetch("http://localhost:3000/api/usuarios", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/usuarios`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -61,7 +67,9 @@ const RegisterUser = () => {
           },
           body: JSON.stringify(usuario),
         });
+
         const data = await response.json();
+
         if (response.ok) {
           setMensaje(data.message);
           setUsuario({
@@ -91,6 +99,7 @@ const RegisterUser = () => {
     }
   };
 
+
   const handleInput = (e) => {
     const { name, value } = e.target;
     setUsuario((prev) => ({
@@ -118,7 +127,7 @@ const RegisterUser = () => {
   }
 
   return (
-    <div>
+    <div className="container-register-user">
       <div className="container-register">
         <Navbar />
         <div className="container-register-contenido">
@@ -176,7 +185,7 @@ const RegisterUser = () => {
                 <input
                   type="password"
                   id="confirmar-password"
-                  name="confirmar_contrasena" // Nombre actualizado
+                  name="confirmar_contrasena"
                   aria-describedby="user-password"
                   aria-invalid="false"
                   placeholder="Confirmar Contraseña"
@@ -210,7 +219,7 @@ const RegisterUser = () => {
                   <span className="enlace-registrarse"> <b>Ingresar</b></span>
                 </NavLink>
               </div>
-              <button className="btn-submit-login"><b>REGISTRAR</b></button>
+              <button className="btn-submit-register"><b>REGISTRAR</b></button>
             </div>
             {captchaValido === false && <div className="error-captcha">{mensajeCaptcha}</div>}
             <div className="recaptcha">

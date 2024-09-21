@@ -36,26 +36,104 @@
     display: block;
     margin-bottom: 40px;
     object-fit: fill;
-    cursor: pointer;  
+    cursor: pointer;
 }
 
-.columnMisCursos{
+.columnMisCursos {
     position: relative;
-    transition: transform 0.8s ease;   
+    transition: transform 0.8s ease;
 }
-.columnMisCursos:hover{
+
+.columnMisCursos:hover {
     transform: scale(1.01);
 }
-.icono-disponible{
+
+.icono-disponible {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     background-color: rgb(11, 169, 11);
     color: #ffff;
     font-size: 11px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 3px;
     border-radius: 5px;
-    right: 11%;
+    left: 2%;
     top: 0.7%;
     cursor: pointer;
+}
+
+
+@media(max-width:1290px) {
+    .misCursos {
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 50px;
+    }
+}
+
+@media(max-width:1048px) {
+    .misCursos {
+        grid-template-columns: repeat(1, 1fr);
+        padding-left: 150px;
+        padding-top: 50px;
+    }
+}
+
+
+@media(max-width:700px) {
+    .container-Cursos {
+        margin-top: 50px;
+    }
+
+    .misCursos {
+        grid-template-columns: repeat(1, 1fr);
+        padding-left: 100px;
+        padding-top: 50px;
+    }
+}
+
+@media(max-width:465px) {
+    .container-misCursos {
+        width: 460px;
+        margin: 0px;
+        padding-top: 60px;
+    }
+
+    .misCursos {
+        padding: 0%;
+        width: 460px;
+        padding-bottom: 20px;
+    }
+
+    .misCursos img {
+        margin-left: 35px;
+        margin-bottom: 0%;
+    }
+
+    .icono-disponible {
+        left: 40px;
+    }
+
+}
+
+@media(max-width:435px) {
+    .container-misCursos {
+        width: 430px;
+        margin: 0px;
+        padding-top: 60px;
+    }
+
+    .misCursos {
+        padding: 0%;
+        width: 430px;
+        padding-bottom: 20px;
+    }
+
+    .misCursos img {
+        margin-left: 20px;
+    }
+
+    .icono-disponible {
+        left: 40px;
+    }
+
 }

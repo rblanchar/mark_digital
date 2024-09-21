@@ -28,22 +28,32 @@ async function getAll(userType) {
     return { data };
 }
 
-async function getCursosByUsuario(idUsuario) {
+async function getCursosByUsuario(idUsuario, userType) {
     try {
-        const result = await db.query(
-            `SELECT c.nombre, c.image
-                FROM cursos c
-                JOIN cursos_usuarios cu ON c.id_curso = cu.id_curso
-                WHERE cu.id_usuario = ?
-                ORDER BY id_c_usuario DESC`,
-            [idUsuario]
-        );
+        let result;
+
+        if (userType === 101) {
+            result = await db.query(
+                'SELECT * FROM cursos ORDER BY id_curso DESC'
+            );
+        } else {
+            result = await db.query(
+                `SELECT c.nombre, c.image
+                 FROM cursos c
+                 JOIN cursos_usuarios cu ON c.id_curso = cu.id_curso
+                 WHERE cu.id_usuario = ?
+                 ORDER BY cu.id_c_usuario DESC`,
+                [idUsuario]
+            );
+        }
+
         return result;
     } catch (error) {
         console.error('Error al obtener los cursos del usuario:', error.message);
         throw error;
     }
 }
+
 
 async function create(curso_usuario, userType) {
     try {

@@ -86,6 +86,19 @@ input {
     color: inherit;
 }
 
+.btn-submit-register {
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    right: 17.3%;
+    background-color: brown;
+    color: #ffff;
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 .recaptcha {
     margin-top: 15px;
     margin-left: 130px;
@@ -121,7 +134,11 @@ input {
     }
 }
 
-@media(max-width:460px) {
+@media(max-width:465px) {
+
+    .container-register-user{
+        width: 460px;
+    }
     .container-register {
         width: 460px;
     }
@@ -132,17 +149,19 @@ input {
     }
 
     .logo-mkdpt-register {
-        top: 3%;
+        top: 0.2%;
         left: 31%;
     }
 
     .title-register-user {
-        top: 20%;
-        left: 23%;
+        top: 18%;
+        left: 19%;
     }
 
     .container-register-contenido {
-        width: 100%;
+        width: 420px;
+        padding: 0%;
+        top: 12%;
     }
 
     .cont-password {
@@ -151,12 +170,80 @@ input {
         margin-left: 39px;
     }
 
+    #password.input-pass,
+    #confirmar-password.input-pass {
+        width: 294px;
+        margin-left: 24px;
+    }
+
     .cont-registrarse2 {
-        margin-left: -25px;
+        margin-left: -35px;
+        width: 80%;
+    }
+
+    .btn-submit-register {
+        right: 15%;
     }
 
     .recaptcha {
         margin-top: 40px;
-        margin-left: 50px;
+        margin-left: 62px;
+    }
+}
+
+@media(max-width:435px) {
+
+    .container-register-user{
+        width: 430px;
+    }
+    .container-register {
+        width: 430px;
+    }
+
+    .logo-login-register {
+        width: 360px;
+        height: 170px;
+    }
+
+    .logo-mkdpt-register {
+        top: 0.2%;
+        left: 31%;
+    }
+
+    .title-register-user {
+        top: 18%;
+        left: 19%;
+    }
+
+    .container-register-contenido {
+        width: 420px;
+        padding: 0%;
+        top: 12%;
+    }
+
+    .cont-password {
+        display: block;
+        width: 305px;
+        margin-left: 39px;
+    }
+
+    #password.input-pass,
+    #confirmar-password.input-pass {
+        width: 294px;
+        margin-left: 24px;
+    }
+
+    .cont-registrarse2 {
+        margin-left: -35px;
+        width: 80%;
+    }
+
+    .btn-submit-register {
+        right: 15%;
+    }
+
+    .recaptcha {
+        margin-top: 40px;
+        margin-left: 62px;
     }
 }

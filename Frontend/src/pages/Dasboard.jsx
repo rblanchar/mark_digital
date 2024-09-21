@@ -1,6 +1,5 @@
 import Navbar from "../components/NavBar";
 import '../styles/Dashboard.css';
-import '../styles/Cursos.css'
 import { useAuth } from "../AuthProvider";
 import Footer from "../components/Footer"
 import React, { useEffect, useState } from 'react';
@@ -12,7 +11,7 @@ function Dashboard() {
     useEffect(() => {
         const fetchCursos = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/cursos_usuarios/cursos', {
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/cursos_usuarios/cursos`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -35,20 +34,20 @@ function Dashboard() {
     }, []);
 
     return (
-        <div>
+        <div className="containerP-misCursos">
             <div className="container-misCursos">
                 <Navbar />
                 <div className='title-misCursos'>
                     <h3>¡Mis Cursos!</h3>
                 </div>
                 <div className="misCursos">
-
                     {cursos.map(curso => (
-                        <div key={curso.id_curso} className="columnMisCursos">
-                            <div className="icono-disponible">DISPONIBLE</div>
+                        <div key={curso.id_curso} className="columnMisCursos">                          
                             <img src={curso.image} alt={curso.nombre} />
+                            <div className="icono-disponible">DISPONIBLE</div>
                         </div>
                     ))}
+                    
                 </div>
             </div>
             <Footer />
